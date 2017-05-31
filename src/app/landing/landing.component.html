@@ -1,0 +1,45 @@
+<div *ngIf="auth.isAdmin() === 'true'" class="jumbotron">
+  <h1 class="display-3">Welcome!</h1>
+  <p class="lead">This is a following application of a research work "Application of Angular 2, TypeScript i REST Web services".</p>
+  <hr class="my-4">
+  <p>It should serve as a tool for a library administration, so that they can easily track users, books and rents.</p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="#" role="button">Source code</a>
+  </p>
+</div>
+
+<div *ngIf="auth.isAdmin() === 'false'">
+  <header class="list-header row">
+    <div class="col-9">
+      <h3>My rents</h3>
+    </div>
+  </header>
+
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+        <th>Books</th>
+        <th>Date rented</th>
+        <th>Notes</th>
+        <th>Returned</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let rent of rents">
+          <td>
+            <ul class="list-unstyled">
+              <li *ngFor="let book of rent.books">
+                {{book.title}}
+              </li>
+            </ul>
+          </td>
+          <td>{{rent.dateRented | date:'yMMMd'}}</td>
+          <td>{{rent.notes}}</td>
+          <td class="action">
+            <button *ngIf="rent.returned" class="btn btn-secondary btn-success"><i class="fa fa-check" aria-hidden="true"></i></button>
+            <button *ngIf="!rent.returned" class="btn btn-secondary btn-danger"><i class="fa fa-times" aria-hidden="true"></i></button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

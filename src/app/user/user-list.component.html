@@ -1,0 +1,33 @@
+<header class="list-header row">
+  <div class="col-9">
+    <h3>Users</h3>
+  </div>
+  <div class="col-3 text-right">
+    <button class="btn btn-primary" (click)="add()">Add new user</button>
+  </div>
+</header>
+
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Date created</th>
+      <th>Phone</th>
+      <th>Email</th>
+      <th>Action</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users" (click)="activateUser($event, user._id)">
+        <td>{{user.firstName}}</td>
+        <td>{{user.lastName}}</td>
+        <td>{{user.dateCreated | date:'yMMMd'}}</td>
+        <td>{{user.phone}}</td>
+        <td>{{user.email}}</td>
+        <td class="action">
+          <button class="btn btn-danger" (click)="deleteUser(user._id)"><i class="fa fa-trash" aria-hidden="true"></i></button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

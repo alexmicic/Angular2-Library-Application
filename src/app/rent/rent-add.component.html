@@ -1,0 +1,39 @@
+<div class="container-fluid rent-header">
+  <div class="row">
+    <h3>Add rent</h3>
+  </div>
+</div>
+
+<form #rentForm="ngForm">
+  <div class="row">
+    <div class="form-group col-12">
+      <label for="user">User</label>
+      <select required class="form-control" id="user" name="user" [ngModel]="rent?.user" (ngModelChange)="rent.user=$event">
+        <option *ngFor="let user of users" [value]="user._id">{{ user.firstName }} {{ user.lastName }}</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-group col-12">
+      <label for="book">Books</label>
+      <select required class="form-control" id="book" name="book" [ngModel]="rent?.books" (ngModelChange)="rent.books=$event" multiple>
+        <option *ngFor="let book of books" [value]="book._id" [disabled]="book.stock < 1">{{ book.title }} ({{ book.stock }})</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-group col-12">
+      <label for="notes">Notes</label>
+      <textarea name="notes" id="notes" class="form-control" placeholder="Notes" [ngModel]="rent?.notes" (ngModelChange)="rent.notes=$event"></textarea>
+    </div>
+  </div>
+
+   <div class="row">
+    <div class="form-group col-12">
+      <button type="submit" class="btn btn-success" (click)="save()" [disabled]="!rentForm.form.valid">SAVE</button>
+      <button type="reset" class="btn btn-secondary" (click)="back()">BACK</button>
+    </div>
+  </div>
+</form>

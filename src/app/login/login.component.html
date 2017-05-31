@@ -1,0 +1,23 @@
+<div class="jumbotron">
+  <div class="container">
+    <h4>Hello visitor, please log in to continue.</h4>
+    <br>
+    <form #loginForm="ngForm">
+      <div class="input-group">
+        <span class="input-group-addon" id="basic-addon1"><i class="fa fa-user" aria-hidden="true"></i></span>
+        <input required name="email" type="text" class="form-control" placeholder="Email" [ngModel]="user?.email" (ngModelChange)="user.email=$event">
+      </div>
+      <br>
+      <div class="input-group">
+        <span class="input-group-addon" id="basic-addon2"><i class="fa fa-lock" aria-hidden="true"></i></span>
+        <input required name="password" type="password" class="form-control" placeholder="Password" [ngModel]="user?.password" (ngModelChange)="user.password=$event">
+      </div>
+      <br>
+      <button class="btn btn-primary" (click)="login()" [disabled]="!loginForm.form.valid">Login</button>
+    
+      <div *ngIf="msg !== ''" class="alert alert-danger" role="alert">
+        {{ msg }}
+      </div>
+    </form>
+  </div>
+</div>

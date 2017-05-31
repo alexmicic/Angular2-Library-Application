@@ -1,0 +1,33 @@
+<header class="list-header row">
+  <div class="col-9">
+    <h3>Books</h3>
+  </div>
+  <div class="col-3 text-right">
+    <button class="btn btn-primary" (click)="add()">Add new book</button>
+  </div>
+</header>
+
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <th>Title</th>
+      <th>Author</th>
+      <th>Year</th>
+      <th>Genre</th>
+      <th>Stock</th>
+      <th>Action</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let book of books" (click)="activateBook($event, book._id)">
+        <td>{{book.title}}</td>
+        <td>{{book.author}}</td>
+        <td>{{book.year}}</td>
+        <td>{{book.genre}}</td>
+        <td>{{book.stock}}</td>
+        <td class="action">
+          <button class="btn btn-danger" (click)="deleteBook(book._id)"><i class="fa fa-trash" aria-hidden="true"></i></button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
