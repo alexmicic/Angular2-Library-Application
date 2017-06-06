@@ -2211,7 +2211,7 @@ exports = module.exports = __webpack_require__(5)(false);
 
 
 // module
-exports.push([module.i, "button:hover {\n  cursor: pointer;\n}\n\nselect, \ntextarea {\n  min-height: 180px;\n}", ""]);
+exports.push([module.i, "button:hover {\n  cursor: pointer;\n}\n\nselect[multiple], \ntextarea {\n  min-height: 180px;\n}", ""]);
 
 // exports
 
