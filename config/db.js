@@ -1,6 +1,10 @@
+// module.exports = {
+//   secret: "libapplication",
+//   url: "mongodb://localhost/library"
+// }
 module.exports = {
   secret: "libapplication",
-  url: "mongodb://localhost/library"
+  url: "mongodb://alexm2017:node123@ds113282.mlab.com:13282/library-alexm2017"
 }
 
 // Note: if the local connection fails then
