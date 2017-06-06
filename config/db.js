@@ -8,7 +8,7 @@
 // }
 module.exports = {
   secret: "libapplication",
-  url: "mongodb://alexm2017:node123@cluster0-shard-00-00-cyn0u.mongodb.net:27017,cluster0-shard-00-01-cyn0u.mongodb.net:27017,cluster0-shard-00-02-cyn0u.mongodb.net:27017/library-angular2?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin"
+  url: "mongodb://alexm2017:node123@cluster0-shard-00-00-cyn0u.mongodb.net:27017,cluster0-shard-00-01-cyn0u.mongodb.net:27017,cluster0-shard-00-02-cyn0u.mongodb.net:27017/Cluster0?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin"
   
 }
 
