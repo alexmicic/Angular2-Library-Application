@@ -2,7 +2,7 @@ button:hover {
   cursor: pointer;
 }
 
-select, 
+select[multiple], 
 textarea {
   min-height: 180px;
 }
