@@ -16,7 +16,7 @@ var port = process.env.PORT || 4001;
 var dataFolder = './';
 
 if (process.env.NODE_ENV === 'production') {
-  port = 80;
+  // port = 80;
   dataFolder = './dist'
 }
 
