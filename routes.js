@@ -398,7 +398,7 @@ module.exports = function(app) {
                 res.json(response);
                 clearInterval(interval);
             }
-          }, 100)
+          }, 400)
 
         } else {
           res.json(Rents);
