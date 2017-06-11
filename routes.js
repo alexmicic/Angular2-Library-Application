@@ -1,7 +1,7 @@
 // grab the models
-var User = require('./model/user');
-var Book = require('./model/book');
-var Rent = require('./model/rent');
+var User = require('./src/model/user');
+var Book = require('./src/model/book');
+var Rent = require('./src/model/rent');
 
 // plugins
 var jwt = require('jsonwebtoken');
